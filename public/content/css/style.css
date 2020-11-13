@@ -1,0 +1,279 @@
+﻿html, body { margin:0; padding:0; height:100%; overflow-y:hidden;}
+
+html {
+	position: relative;
+	height: 100% !important;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    body {
+        padding-top: 0rem;
+    }
+}
+
+body > #content {
+    padding: 0px 15px 10px;
+    flex: 1 1 auto;
+}
+
+.setRight{
+    float:right; 
+}
+
+.mp0 { margin: 0; padding: 0; }
+
+.mb0 { margin-bottom: 0; }
+
+#map-content{ position: relative; }
+
+#menu { width: 350px; height:100%; float: right; background-color:#f2f2f2; overflow-y:auto; }
+
+#map { 
+    width: 1570px;
+    float:right; 
+    max-height: 100% !important;
+}
+
+.bs-navbar {
+
+    min-height: 4rem;
+    background-color: #563d7c;
+    z-index: 1030;
+
+}
+#sidemenu {
+    font-size: 0.875rem;
+    position: -webkit-sticky;
+    position: sticky;
+    /*top: 5rem;*/
+    top:64px;
+    z-index: 1000;
+    max-height: calc(100vh - 4rem);
+    max-width: 320px;
+    min-height: 1080px;
+    overflow-y: auto;
+    background-color: #f2f2f2;
+    /*font-size:11px;*/
+}
+
+#sidemenu ul {
+    padding-left: 0;
+}
+
+#sidemenu ul li {
+	list-style: none;
+}
+#sidemenu ul li ul li{
+	margin-left: 1rem !important;
+}
+
+.padding_20{
+    padding:20px;
+}
+
+#Buildarea{
+    padding-bottom: 10px;
+}
+
+#Shunkoarea{
+    padding-bottom: 10px;
+}
+#Bunjoarea{
+    padding-bottom: 10px;
+}
+#Kanriarea{
+    padding-bottom: 10px;
+}
+#Sekouarea{
+    padding-bottom: 10px;
+}
+/********************************************
+* Now Loading
+********************************************/
+.hide {
+    display: none;
+}
+.loading {
+    background-image : url(../images/loading.gif);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+    
+    /*position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    background-image: url(../images/loading.gif);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: 150px 150px;*/
+  }
+
+/**********************************************
+* GoogleMap Label Class
+**********************************************/
+.label_white {
+    color: #ffffff;
+    background: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    padding: 1px 1px;
+    border-color:#000000;
+    border-style:solid;
+    border-width:3px;
+    border-radius: 5px;
+}
+
+.label_black {
+    color: #000000;
+    background: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    padding: 1px 1px;
+    border-color:#000000;
+    border-style:solid;
+    border-width:3px;
+    border-radius: 5px;
+}
+
+.label_red {
+    color: #ff0000;
+    background: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    padding: 1px 1px;
+    border-color:#000000;
+    border-style:solid;
+    border-width:3px;
+    border-radius: 5px;
+}
+
+.label_blue {
+    color: #0000ff;
+    background: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    padding: 1px 1px;
+    border-color:#000000;
+    border-style:solid;
+    border-width:3px;
+    border-radius: 5px;
+}
+
+.labelsoff {
+    color: #000000;
+    background: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    padding: 1px 1px;
+    border: solid 5px #0000FF;
+    border-radius: 5px;
+    display: none!important;
+}
+/***********************************************
+* GoogleMap InfoWindow Class
+***********************************************/
+/*
+.gm-style-iw {
+    overflow: hidden ! important;
+}
+.gm-style-iw div {
+    overflow: hidden ! important;
+}
+
+.gm-style-iw-c {
+    padding-right:12px  !important;
+    padding-bottom:12px !important;
+} 
+
+.gm-style .gm-style-iw-c{
+   padding : 0px !important;
+}*/
+
+.InfoWindow_001 {
+   background: #000000;
+   color: #ffffff;
+   border-radius: 2px 2px 0 0;
+}
+
+.InfoWindow_002{
+    background: #ffffff;
+    color: #000000;
+    border-radius: 2px 2px 0 0;
+}
+
+.infoboxWhite {
+    display: block;
+    width: 300px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 2px 7px 1px rgba(0,0,0,0.3);
+}
+
+.infoboxWhite:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    /*border-top: 15px solid #e0edff;*/
+    border-top: 15px solid #ffffff;
+}
+
+.infoboxBlue{
+    display: block;
+    width: 300px;
+    position: relative;
+    background: #a1dae6;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 2px 7px 1px rgba(0,0,0,0.3);   
+}
+
+.infoboxBlue:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    /*border-top: 15px solid #e0edff;*/
+    border-top: 15px solid #a1dae6;
+
+    
+}
+
+.infoboxTransparent {
+    display: block;
+    width: 300px;
+    position: relative;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.infoboxTransparent:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    /*border-top: 15px solid #e0edff;*/
+    border-top: 15px solid rgba(0,0,0,0.5);
+}
+
+td#modal-message {
+    font-size: 89% !important;
+}

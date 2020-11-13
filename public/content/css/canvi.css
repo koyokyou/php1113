@@ -1,0 +1,255 @@
+body.is-canvi-ready {
+    overflow-x: hidden
+}
+
+    body.is-canvi-ready .canvi-navbar {
+        display: block;
+        visibility: hidden;
+    }
+
+    body.is-canvi-open .canvi-navbar {
+        display: block;
+        visibility: visible;
+    }
+
+    body.is-canvi-ready .canvi-open-btn {
+        display: block;
+        visibility: visible;
+    }
+
+    body.is-canvi-open .canvi-open-btn {
+        display: block;
+        visibility: hidden;
+    }
+
+    body.is-canvi-ready .canvi-close-btn {
+        display: block;
+        visibility: hidden;
+    }
+
+    body.is-canvi-open .canvi-close-btn {
+        display: block;
+        visibility: visible;
+    }
+
+.canvi-navbar, .canvi-overlay {
+    top: 0;
+    bottom: 0;
+    visibility: hidden
+}
+
+.canvi-navbar {
+    position: fixed;
+    height: 100%;
+    background: #fff;
+    width: 280px;
+    display: none;
+    transition: -webkit-transform .3s cubic-bezier(.66,.66,.66,.66);
+    transition: transform .3s cubic-bezier(.66,.66,.66,.66);
+    transition: transform .3s cubic-bezier(.66,.66,.66,.66),-webkit-transform .3s cubic-bezier(.66,.66,.66,.66);
+    will-change: transform;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+}
+
+    .canvi-content, 
+    .canvi-navbar.is-canvi-open {
+        transition: -webkit-transform .3s cubic-bezier(.66,.66,.66,.66);
+    }
+
+    .canvi-navbar::-webkit-scrollbar {
+        width: 0
+    }
+
+    .canvi-navbar::-webkit-scrollbar-track {
+        background: #efefef;
+    }
+
+    .canvi-navbar::-webkit-scrollbar-thumb {
+        background: #ddd;
+        border-radius: 2px;
+    }
+
+    .canvi-navbar.is-canvi-open {
+        transition: transform .3s cubic-bezier(.66,.66,.66,.66);
+        transition: transform .3s cubic-bezier(.66,.66,.66,.66),-webkit-transform .3s cubic-bezier(.66,.66,.66,.66);
+        will-change: transform;
+    }
+
+    .canvi-navbar[data-position=right] {
+        right: 0;
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0)
+    }
+
+        .canvi-navbar[data-position=right].is-canvi-open, .canvi-navbar[data-position=right][data-push-content=true] {
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0)
+        }
+
+    .canvi-navbar[data-position=left] {
+        left: 0;
+        -webkit-transform: translate3d(-100%,0,0);
+        transform: translate3d(-100%,0,0)
+    }
+
+        .canvi-navbar[data-position=left].is-canvi-open, .canvi-navbar[data-position=left][data-push-content=true] {
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0)
+        }
+
+    .canvi-navbar[data-push-content=false] {
+        z-index: 10
+    }
+
+    .canvi-navbar[data-push-content=true] {
+        z-index: 1
+    }
+
+.canvi-content {
+    position: relative;
+    z-index: 5;
+    transition: transform .3s cubic-bezier(.66,.66,.66,.66);
+    transition: transform .3s cubic-bezier(.66,.66,.66,.66),-webkit-transform .3s cubic-bezier(.66,.66,.66,.66);
+    /* overflow: hidden;
+    background: #fff */
+}
+
+    .canvi-content.is-canvi-open {
+        transition: -webkit-transform .3s cubic-bezier(.66,.66,.66,.66);
+        transition: transform .3s cubic-bezier(.66,.66,.66,.66);
+        transition: transform .3s cubic-bezier(.66,.66,.66,.66),-webkit-transform .3s cubic-bezier(.66,.66,.66,.66)
+    }
+
+.canvi-overlay {
+    position: absolute;
+    right: 0;
+    left: 0;
+    /* background: rgba(0,0,0,.4); */
+    opacity: 0;
+    z-index: 1031;
+}
+
+.canvi-content.is-canvi-open .canvi-overlay {
+    visibility: visible;
+    -webkit-animation-name: canvi-animate-in;
+    animation-name: canvi-animate-in;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function: cubic-bezier(.66,.66,.66,.66);
+    animation-timing-function: cubic-bezier(.66,.66,.66,.66);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden
+}
+
+    .canvi-content.is-canvi-open .canvi-overlay.canvi-animate-out {
+        -webkit-animation-name: canvi-animate-out;
+        animation-name: canvi-animate-out;
+        -webkit-animation-duration: .3s;
+        animation-duration: .3s;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-timing-function: cubic-bezier(.66,.66,.66,.66);
+        animation-timing-function: cubic-bezier(.66,.66,.66,.66);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden
+    }
+
+@-webkit-keyframes canvi-animate-in {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes canvi-animate-in {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes canvi-animate-out {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes canvi-animate-out {
+    0% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+.canvi-btn{
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    z-index:1032;
+    background-color:transparent;
+  }
+  
+  .canvi-btn:hover, 
+  .canvi-btn:focus {
+    cursor: pointer;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+  }
+  @media (min-width: 768px) {
+    .canvi-btn {
+      display: block;
+    }
+  }
+  .canvi-btn .icon-bar {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #2f75b5;
+    margin:4px auto;
+  }
+  
+  .canvi-btn.icon-bar + .icon-bar {
+    margin-top: 4px;
+  }
+  .canvi-btn .icon-bar.bar1 {
+    top: 0;
+    outline: 1px solid transparent;
+    animation: topbar-back 500ms 0s;
+    animation-fill-mode: forwards;
+  }
+  .canvi-btn .icon-bar.bar2 {
+    outline: 1px solid transparent;
+    opacity: 1;
+  }
+  .canvi-btn .icon-bar.bar3 {
+    bottom: 0;
+    outline: 1px solid transparent;
+    animation: bottombar-back 500ms 0s;
+    animation-fill-mode: forwards;
+  }
+
+  .canvi-btn.canvi-close-btn .icon-bar {
+    background-color: #fff;
+  }
